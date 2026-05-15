@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 const info = [
   { icon: '📧', label: 'Email', value: 'hello@goldenwrapstudio.com' },
   { icon: '📞', label: 'Phone', value: '+91 98765 43210' },
-  { icon: '📍', label: 'Location', value: 'Mumbai, Maharashtra, India' },
+  { icon: '📍', label: 'Location', value: 'Usmanpura, Ahmedabad, Gujarat, India' },
   { icon: '🕐', label: 'Hours', value: 'Mon–Sat: 10am – 7pm' },
 ]
 

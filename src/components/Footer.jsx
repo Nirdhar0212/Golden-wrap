@@ -31,7 +31,7 @@ export default function Footer() {
           <h4 style={s.heading}>CONTACT</h4>
           <p style={s.contact}>📧 hello@goldenwrapstudio.com</p>
           <p style={s.contact}>📞 +91 98765 43210</p>
-          <p style={s.contact}>📍 Mumbai, Maharashtra, India</p>
+          <p style={s.contact}>📍 Usmanpura, Ahmedabad, Gujarat, India</p>
           <p style={s.contact}>🕐 Mon–Sat: 10am – 7pm</p>
         </div>
 

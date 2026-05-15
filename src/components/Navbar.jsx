@@ -26,7 +26,7 @@ export default function Navbar() {
         </Link>
 
         {/* ── DESKTOP LINKS ── */}
-        <div style={styles.desktopLinks}>
+        <div className="nav-desktop" style={styles.desktopLinks}>
           {links.map(l => (
             <Link
               key={l.to}
@@ -44,7 +44,7 @@ export default function Navbar() {
         </div>
 
         {/* ── HAMBURGER ── */}
-        <button style={styles.hamburger} onClick={() => setOpen(!open)}>
+        <button className="nav-hamburger" style={styles.hamburger} onClick={() => setOpen(!open)}>
           {open ? '✕' : '☰'}
         </button>
       </div>
@@ -63,9 +63,21 @@ export default function Navbar() {
                 {l.label}
               </Link>
             ))}
+            <Link to="/products" style={styles.mobileshopBtn} onClick={() => setOpen(false)}>Shop Now</Link>
           </motion.div>
         )}
       </AnimatePresence>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .nav-desktop { display: none !important; }
+          .nav-hamburger { display: block !important; }
+        }
+        @media (min-width: 769px) {
+          .nav-desktop { display: flex !important; }
+          .nav-hamburger { display: none !important; }
+        }
+      `}</style>
     </nav>
   )
 }
@@ -114,8 +126,15 @@ const styles = {
     fontSize: '0.9rem', fontFamily: "'Lato',sans-serif",
   },
   hamburger: {
-    display: 'none', background: 'none', border: 'none',
+    background: 'none', border: 'none',
     color: '#d4af37', fontSize: '1.7rem', cursor: 'pointer',
+  },
+  mobileshopBtn: {
+    background: 'linear-gradient(135deg,#d4af37,#f0d060)',
+    color: '#1a3a1a', padding: '10px 24px',
+    borderRadius: '50px', fontWeight: '700',
+    fontSize: '0.9rem', fontFamily: "'Lato',sans-serif",
+    textAlign: 'center',
   },
   mobileMenu: {
     background: '#1a3a1a', borderTop: '1px solid #2d5a27',
