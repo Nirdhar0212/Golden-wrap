@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 
 const info = [
-  { icon: '📧', label: 'Email', value: 'hello@goldenwrapstudio.com' },
-  { icon: '📞', label: 'Phone', value: '+91 98765 43210' },
-  { icon: '📍', label: 'Location', value: 'Usmanpura, Ahmedabad, Gujarat, India' },
+  { icon: '📞', label: 'Phone', value: '+91 97379 61777' },
+  { icon: '📍', label: 'Location', value: 'Near, Bn-2 Gokul, opp. Girdhar Park society, nr. Arham elegance apartment, Shanti Nagar, Ahmedabad, Gujarat 380013', link: 'https://maps.app.goo.gl/1MXw2zkXtU8EKYbc7?g_st=aw' },
+  { icon: '📸', label: 'Instagram', value: 'the_golden_wrap_studio', link: 'https://www.instagram.com/the_golden_wrap_studio?igsh=d2N2ODc3YjN1dm00&utm_source=qr' },
   { icon: '🕐', label: 'Hours', value: 'Mon–Sat: 10am – 7pm' },
 ]
 
@@ -56,7 +56,13 @@ export default function Contact() {
                 <div style={s.infoIcon}>{item.icon}</div>
                 <div>
                   <p style={s.infoLabel}>{item.label}</p>
-                  <p style={s.infoValue}>{item.value}</p>
+                  <p style={s.infoValue}>
+                    {item.link ? (
+                      <a href={item.link} target="_blank" rel="noopener noreferrer" style={{color: '#35623B', textDecoration: 'none'}}>{item.value}</a>
+                    ) : (
+                      item.value
+                    )}
+                  </p>
                 </div>
               </div>
             ))}
@@ -100,7 +106,7 @@ export default function Contact() {
 
 const s = {
   header: {
-    background: 'linear-gradient(135deg,#1a3a1a,#2d5a27)',
+    background: '#35623B',
     padding: '64px 24px', textAlign: 'center',
   },
   tag: { color: '#d4af37', letterSpacing: '4px', fontSize: '12px', textTransform: 'uppercase', marginBottom: '14px' },
@@ -113,17 +119,17 @@ const s = {
     maxWidth: '1000px', margin: '0 auto', padding: '64px 28px',
     display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: '52px',
   },
-  infoTitle: { fontFamily: "'Playfair Display',serif", color: '#1a3a1a', fontSize: '1.8rem', fontWeight: '700' },
-  infoDesc: { color: '#4a6741', lineHeight: 1.8, marginTop: '12px', fontSize: '0.95rem' },
+  infoTitle: { fontFamily: "'Playfair Display',serif", color: '#35623B', fontSize: '1.8rem', fontWeight: '700' },
+  infoDesc: { color: '#35623B', lineHeight: 1.8, marginTop: '12px', fontSize: '0.95rem' },
   infoRow: { display: 'flex', gap: '16px', alignItems: 'flex-start', marginBottom: '24px' },
   infoIcon: {
     width: '46px', height: '46px', borderRadius: '50%',
-    background: 'linear-gradient(135deg,#1a3a1a,#2d5a27)',
+    background: '#35623B',
     display: 'flex', alignItems: 'center', justifyContent: 'center',
     fontSize: '1.1rem', flexShrink: 0,
   },
   infoLabel: { color: '#d4af37', fontSize: '0.75rem', fontWeight: '700', letterSpacing: '1.5px', textTransform: 'uppercase' },
-  infoValue: { color: '#1a3a1a', fontSize: '0.95rem', marginTop: '3px' },
+  infoValue: { color: '#35623B', fontSize: '0.95rem', marginTop: '3px' },
   form: {
     background: '#fff', border: '1px solid #e8d5a3', borderRadius: '20px',
     padding: '36px', boxShadow: '0 4px 24px rgba(212,175,55,0.1)',
@@ -136,7 +142,7 @@ const s = {
   },
   submitBtn: {
     background: 'linear-gradient(135deg,#d4af37,#f0d060)',
-    color: '#1a3a1a', border: 'none', padding: '14px',
+    color: '#35623B', border: 'none', padding: '14px',
     borderRadius: '50px', fontWeight: '700', fontSize: '1rem',
     cursor: 'pointer', fontFamily: "'Lato',sans-serif",
   },
@@ -147,6 +153,6 @@ const s = {
     padding: '52px', textAlign: 'center',
     boxShadow: '0 4px 24px rgba(212,175,55,0.1)',
   },
-  successTitle: { fontFamily: "'Playfair Display',serif", color: '#1a3a1a', fontSize: '1.6rem', fontWeight: '700', marginBottom: '10px' },
-  successDesc: { color: '#4a6741', fontSize: '1rem' },
+  successTitle: { fontFamily: "'Playfair Display',serif", color: '#35623B', fontSize: '1.6rem', fontWeight: '700', marginBottom: '10px' },
+  successDesc: { color: '#35623B', fontSize: '1rem' },
 }

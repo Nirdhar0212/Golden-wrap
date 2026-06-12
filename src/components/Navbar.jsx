@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const links = [
   { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
   { to: '/products', label: 'Products' },
   { to: '/contact', label: 'Contact' },
 ]
@@ -18,11 +19,7 @@ export default function Navbar() {
 
         {/* ── LOGO (top left) ── */}
         <Link to="/" style={styles.logo}>
-          <div style={styles.logoIcon}>🎁</div>
-          <div>
-            <div style={styles.logoTitle}>The Golden Wrap</div>
-            <div style={styles.logoSub}>S T U D I O</div>
-          </div>
+          <img src="/logo.jpeg" alt="The Golden Wrap Studio" style={styles.logoImg} />
         </Link>
 
         {/* ── DESKTOP LINKS ── */}
@@ -85,7 +82,7 @@ export default function Navbar() {
 const styles = {
   nav: {
     position: 'fixed', top: 0, width: '100%', zIndex: 100,
-    background: '#1a3a1a',
+    background: '#35623B',
     borderBottom: '2px solid #d4af37',
     boxShadow: '0 2px 24px rgba(0,0,0,0.35)',
   },
@@ -97,19 +94,11 @@ const styles = {
   logo: {
     display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none',
   },
-  logoIcon: {
-    width: '44px', height: '44px', borderRadius: '50%',
-    background: 'linear-gradient(135deg,#d4af37,#f0d060)',
-    display: 'flex', alignItems: 'center', justifyContent: 'center',
-    fontSize: '1.4rem', boxShadow: '0 2px 12px rgba(212,175,55,0.5)',
-    flexShrink: 0,
-  },
-  logoTitle: {
-    color: '#d4af37', fontFamily: "'Playfair Display',serif",
-    fontWeight: '700', fontSize: '1.1rem', lineHeight: 1.1,
-  },
-  logoSub: {
-    color: '#8ab88a', fontSize: '0.6rem', letterSpacing: '3px',
+  logoImg: {
+    height: '52px',
+    width: 'auto',
+    objectFit: 'contain',
+    display: 'block',
   },
   desktopLinks: {
     display: 'flex', alignItems: 'center', gap: '32px',
@@ -137,7 +126,7 @@ const styles = {
     textAlign: 'center',
   },
   mobileMenu: {
-    background: '#1a3a1a', borderTop: '1px solid #2d5a27',
+    background: '#35623B', borderTop: '1px solid #4a7a50',
     padding: '16px 28px', display: 'flex',
     flexDirection: 'column', gap: '16px', overflow: 'hidden',
   },

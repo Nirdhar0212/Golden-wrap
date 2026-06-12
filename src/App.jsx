@@ -4,6 +4,9 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import Products from './pages/Products'
 import Contact from './pages/Contact'
+import Rakhi from './pages/Rakhi'
+import RakhiHampers from './pages/RakhiHampers'
+import About from './pages/About'
 
 export default function App() {
   return (
@@ -13,6 +16,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/products/rakhi" element={<Rakhi />} />
+          <Route path="/products/rakhi-hampers" element={<RakhiHampers />} />
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
